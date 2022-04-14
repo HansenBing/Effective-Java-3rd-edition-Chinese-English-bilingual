@@ -8,7 +8,7 @@ When a program fails due to an uncaught exception, the system automatically prin
 
 **To capture a failure, the detail message of an exception should contain the values of all parameters and fields that contributed to the exception.** For example, the detail message of an IndexOutOfBoundsException should contain the lower bound, the upper bound, and the index value that failed to lie between the bounds. This information tells a lot about the failure. Any or all of the three values could be wrong. The index could be one less than the lower bound or equal to the upper bound (a “fencepost error”), or it could be a wild value, far too low or high. The lower bound could be greater than the upper bound (a serious internal invariant failure). Each of these situations points to a different problem, and it greatly aids in the diagnosis if you know what sort of error you’re looking for.
 
-**要捕获失败，异常的详细消息应该包含导致异常的所有参数和字段的值。** 例如，IndexOutOfBoundsException 的详细消息应该包含下界、上界和未能位于下界之间的索引值。这些信息说明了很多关于失败的信息。这三个值中的任何一个或所有值都可能是错误的。索引可以小于或等于上界（「越界错误」），也可以是一个无效值，太小或太大。下界可能大于上界（严重的内部故障）。每一种情况都指向一个不同的问题，如果你知道你在寻找什么样的错误，这对诊断有很大的帮助。
+**要捕获失败，异常的详细消息应该包含导致异常的所有参数和字段的值。** 例如，IndexOutOfBoundsException 的详细消息应该包含下界、上界和未能位于上、下界之间的索引值。这些信息说明了很多关于失败的信息。这三个值中的任何一个或所有值都可能是错误的。索引可以小于或等于上界（「越界错误」），也可以是一个无效值，太小或太大。下界可能大于上界（严重的内部故障）。每一种情况都指向一个不同的问题，如果你知道你在寻找什么样的错误，这对诊断有很大的帮助。
 
 One caveat concerns security-sensitive information. Because stack traces may be seen by many people in the process of diagnosing and fixing software issues, **do not include passwords, encryption keys, and the like in detail messages.**
 
